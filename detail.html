@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Buku | Sentra Buku Nusantara</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark py-3">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html#beranda">
+                    <span class="brand-icon"><i class="bi bi-book"></i></span>
+                    Sentra Buku Nusantara
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
+                        <li class="nav-item"><a class="nav-link" href="index.html#beranda">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#produk">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#tentang">Tentang Kami</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <a class="btn btn-light text-primary fw-semibold" href="index.html#hubungi">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-5 bg-light min-vh-100">
+        <div class="container">
+            <div class="mb-4 d-flex flex-wrap gap-2 text-muted small">
+                <a href="index.html#beranda" class="text-decoration-none text-primary d-flex align-items-center gap-1">
+                    <i class="bi bi-house"></i> Beranda
+                </a>
+                <span>/</span>
+                <a href="index.html#produk" class="text-decoration-none text-primary">Produk</a>
+                <span>/</span>
+                <span id="breadcrumbTitle">Detail Buku</span>
+            </div>
+
+            <div class="row g-4 align-items-center" id="detailWrapper">
+                <div class="col-lg-6">
+                    <img id="detailImage" src="" alt="Detail Buku" class="rounded-4 w-100 shadow-sm">
+                </div>
+                <div class="col-lg-6">
+                    <div id="detailBadge" class="badge text-bg-primary mb-3">Kategori</div>
+                    <h3 id="detailTitle" class="fw-bold text-primary mb-2">Judul Buku</h3>
+                    <p id="detailPrice" class="h4 fw-semibold text-accent mb-4">Rp0</p>
+                    <h5 class="fw-semibold mb-2">Deskripsi Produk</h5>
+                    <p id="detailDescription" class="text-muted mb-4"></p>
+                    <div class="mb-4">
+                        <h5 class="fw-semibold mb-2">Tips Perawatan Buku</h5>
+                        <ul id="detailTips" class="list-unstyled text-muted mb-0"></ul>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a id="detailWhatsapp" href="https://wa.me/6285749534670" target="_blank" class="btn btn-primary btn-lg w-100">
+                            <i class="bi bi-whatsapp me-2"></i>Beli via WhatsApp
+                        </a>
+                        <a href="index.html#produk" class="btn btn-outline-primary btn-lg w-100">
+                            <i class="bi bi-arrow-left me-2"></i>Kembali ke Produk
+                        </a>
+                    </div>
+                    <div class="mt-4 p-4 rounded-4 bg-white shadow-sm">
+                        <h6 class="fw-semibold mb-2">Informasi Tambahan</h6>
+                        <ul id="detailNotes" class="text-muted mb-0"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 text-center text-white">
+        <p class="mb-0">© 2024 Sentra Buku Nusantara. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const fallbackMessage = 'Pilih buku dari katalog untuk melihat detail lengkap.';
+        const detailElements = {
+            image: document.getElementById('detailImage'),
+            badge: document.getElementById('detailBadge'),
+            title: document.getElementById('detailTitle'),
+            price: document.getElementById('detailPrice'),
+            description: document.getElementById('detailDescription'),
+            tips: document.getElementById('detailTips'),
+            notes: document.getElementById('detailNotes'),
+            whatsapp: document.getElementById('detailWhatsapp'),
+            breadcrumb: document.getElementById('breadcrumbTitle')
+        };
+
+        const bookData = {
+            sastra: {
+                title: 'Sastra Senja',
+                category: 'Fiksi Modern',
+                price: 125000,
+                description: 'Novel terbaru karya Aruna Larasati ini menyajikan perjalanan tiga tokoh yang mencari arti rumah di tengah hiruk pikuk kota. Bahasa yang hangat dan ilustrasi eksklusif membuat buku ini wajib koleksi.',
+                tips: [
+                    'Simpan di rak kering jauh dari sinar matahari langsung.',
+                    'Gunakan pembatas buku agar tidak melipat halaman.',
+                    'Lap sampul secara berkala dengan kain microfiber.'
+                ],
+                notes: [
+                    'Paket bundling tersedia untuk edisi tanda tangan penulis.',
+                    'Bonus poster mini untuk 50 pembeli pertama.'
+                ],
+                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=900&h=600&fit=crop',
+                whatsapp: 'https://wa.me/6285749534670?text=Halo%20Sentra%20Buku,%20saya%20ingin%20membeli%20Sastra%20Senja'
+            },
+            semesta: {
+                title: 'Semesta dalam Saku',
+                category: 'Sains Populer',
+                price: 98000,
+                description: 'Penjelasan ringan tentang kosmos dan teknologi modern untuk pembaca pemula. Ilustrasi infografik membantu memahami konsep astrofisika terbaru.',
+                tips: [
+                    'Gunakan sampul plastik untuk melindungi dari debu.',
+                    'Catat poin penting di sticky notes agar tidak menulis di halaman.'
+                ],
+                notes: [
+                    'Termasuk akses video micro-learning selama 30 hari.',
+                    'Kompatibel dengan audio companion (kode QR tersedia).'
+                ],
+                image: 'https://images.unsplash.com/photo-1463320726281-696a485928c7?w=900&h=600&fit=crop',
+                whatsapp: 'https://wa.me/6285749534670?text=Halo%20Sentra%20Buku,%20saya%20ingin%20membeli%20Semesta%20dalam%20Saku'
+            },
+            umkm: {
+                title: 'Strategi UMKM Naik Kelas',
+                category: 'Bisnis & Karier',
+                price: 145000,
+                description: 'Panduan praktis membangun usaha lokal yang tangguh dan adaptif. Dilengkapi studi kasus UMKM Indonesia yang sukses menembus pasar internasional.',
+                tips: [
+                    'Highlight bagian strategi agar mudah diulang.',
+                    'Diskusikan setiap bab bersama tim bisnis Anda.'
+                ],
+                notes: [
+                    'Mendapatkan template perencanaan bisnis (via QR).',
+                    'Sertifikat workshop daring bagi pembeli yang registrasi.'
+                ],
+                image: 'https://images.unsplash.com/photo-1472289065668-ce650ac443d2?w=900&h=600&fit=crop',
+                whatsapp: 'https://wa.me/6285749534670?text=Halo%20Sentra%20Buku,%20saya%20ingin%20membeli%20Strategi%20UMKM%20Naik%20Kelas'
+            }
+        };
+
+        const formatPrice = value =>
+            new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(value);
+
+        function populateDetail(data) {
+            if (!data) {
+                detailElements.title.textContent = 'Detail Buku Tidak Ditemukan';
+                detailElements.description.textContent = fallbackMessage;
+                detailElements.tips.innerHTML = '';
+                detailElements.notes.innerHTML = '';
+                detailElements.image.src = 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=900&h=600&fit=crop';
+                detailElements.badge.textContent = 'Katalog';
+                detailElements.price.textContent = '-';
+                detailElements.breadcrumb.textContent = 'Detail Buku';
+                return;
+            }
+
+            detailElements.image.src = data.image;
+            detailElements.image.alt = `Detail ${data.title}`;
+            detailElements.badge.textContent = data.category;
+            detailElements.title.textContent = data.title;
+            detailElements.price.textContent = formatPrice(data.price);
+            detailElements.description.textContent = data.description;
+            detailElements.tips.innerHTML = data.tips.map(tip =>
+                `<li><i class="bi bi-check-circle text-primary me-2"></i>${tip}</li>`
+            ).join('');
+            detailElements.notes.innerHTML = data.notes.map(note => `<li>${note}</li>`).join('');
+            detailElements.whatsapp.href = data.whatsapp || detailElements.whatsapp.href;
+            detailElements.breadcrumb.textContent = data.title;
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const bookKey = params.get('book') || 'sastra';
+        populateDetail(bookData[bookKey]);
+    </script>
+</body>
+</html>
+
